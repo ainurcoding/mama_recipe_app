@@ -1,0 +1,13 @@
+validasi gunakan 
+library joi (validasi backend)
+
+validasi di frontend
+library  - react-hook-form 
+        - formik
+
+library untuk alert
+        - sweetalert
+
+untuk join table
+bisa gunakan waktu create table field nya berisi
+nama_field UUID references nama_table_yang_ingin_dihubungkan(user_id)
