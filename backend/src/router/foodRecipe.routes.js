@@ -62,11 +62,13 @@ router
 
   // get all recipes
   .get("/recipes/list", listRecipe)
+  // get all recipes with a specific user id
   .get("/recipes/user/:id", listRecipesUser)
+  // get by id recipes
+  .get("/recipes/:id", detail)
   .post("/recipes/insert", upload, insertRecipe)
   .put("/recipes/update/:id", upload, updateRecipe)
-  .get("/recipes/:title", nameRecipe)
-  .get("/recipes/id/:id", detail)
+  .get("/search/recipes/:title/:sortBy", nameRecipe)
   .get("/recipes-sort", sortRecipe)
   // .post('/foodRecipe1/insert', insertRecipe)
   .delete("/recipes/delete/:id", deleteRecipe)

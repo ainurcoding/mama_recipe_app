@@ -32,6 +32,7 @@ router
      * this path handles all user data
      */
     .get('/users', jwtAuth, isCustomer, listUser)
+    .get('/users/list', listUser)
     .get('/user/:name', nameUser)
     .get('/user/id/:id', detail)
     .post('/user', insertUser)

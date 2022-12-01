@@ -1,0 +1,2 @@
+backend : sudah serupa dengan deploy di https://github.com/ainurcoding/mama_recipe_API
+frontend: sudah serupa dengan deploy di https://github.com/ainurcoding/mama_recipe_FE

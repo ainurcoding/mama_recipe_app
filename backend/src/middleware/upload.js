@@ -8,9 +8,9 @@ let id = crypto.randomBytes(10).toString('hex');
 // for file managemet
 const multerUpload = multer({
     storage: multer.diskStorage({
-        destination: (req, file, cb) => {
-            cb(null, './public/img');
-        },
+        // destination: (req, file, cb) => {
+        //     cb(null, './public/img');
+        // },
         filename: (req, file, cb) => {
             const baseName = path.basename(file.originalname);
             const ext = path.extname(file.originalname);

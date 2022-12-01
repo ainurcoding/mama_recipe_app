@@ -1,15 +1,15 @@
 const userModel = require('../model/user.model');
 const {failed, success} = require('../helper/response')
-
+const cloudinary = require('../helper/cloudinary')
 const userModelController = {
     // methond
     listUser: (req, res) => {
         userModel
             .selectAll()
             .then((results) => {
-                res.json(results);
+                success(res, results, "success", "success get all data users");
             }).catch((err) => {
-                res.json(err);
+                failed(res, err.message, "failed", "failed get all data users")
             });
     },
     insertUser: (req, res) => {
@@ -42,17 +42,24 @@ const userModelController = {
                 res.json(err)
             })
     },
-    updateUser: (req, res) => {
+    updateUser: async (req, res) => {
         // get data
         const id = req.params.id;
-        var photo;
+        let photo;
         const { name, email, phone } = req.body;
         if (req.file) {
-            photo = req.file.filename;
+            photo = await cloudinary.uploader.upload(req.file.path);
         }
         // integrated data
         const data = {
-            id, name, email, phone, photo
+            id, 
+            name, 
+            email, 
+            phone, 
+            photo,
+            photo_pub_id: photo.public_id,
+            photo_url: photo.url,
+            photo_secure_url: photo.secure_url
         }
 
         // send data to model

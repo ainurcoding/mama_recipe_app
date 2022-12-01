@@ -32,10 +32,10 @@ const foodRecipe = {
     createRecipe: (data) => {
         return new Promise((resolve, reject) => {
             const query = {
-                text: `INSERT INTO recipes (title, ingredients, video, photo, user_id)
+                text: `INSERT INTO recipes (title, ingredients, video, photo, user_id, photo_pub_id, photo_url, photo_secure_url)
                         VALUES
-                        ($1, $2 ,$3 ,$4, $5)`,
-                values: [data.title, data.ingredients, data.video, data.photo, data.user_id]
+                        ($1, $2 ,$3 ,$4, $5, $6, $7, $8)`,
+                values: [data.title, data.ingredients, data.video, data.photo, data.user_id, data.photo_pub_id, data.photo_url, data.photo_secure_url]
             }
             db.query(query, (err, res) => {
                 if (err) {
@@ -49,11 +49,12 @@ const foodRecipe = {
     // router spesifik search
 
     // usahakan parameter didalamnya jangan sama dengan nama field table   
-    searchRecipe: (title) => {
+    searchRecipe: (data) => {
         return new Promise((resolve, reject) => {
+            console.log(data)
             const query = {
-                text: `SELECT * FROM recipes where title ILIKE $1`,
-                values: [`%${title}%`]
+                text: `SELECT * FROM recipes where title ILIKE $1 ORDER BY title ${data.sortby}`,
+                values: [`%${data.title}%`]
             }
             db.query(query, (err, res) => {
                 if (err) {
@@ -67,7 +68,10 @@ const foodRecipe = {
     selectDetail: (id) => {
         return new Promise((resolve, reject) => {
             const query = {
-                text: `SELECT * FROM recipes where id =$1`,
+                text: `
+                SELECT recipes.*, users.photo as ava_users, users.name, users.email FROM recipes 
+                JOIN users ON recipes.user_id = users.id_user
+                where id_recipes = $1`,
                 values: [id],
             }
             db.query(query , (err, res) => {
@@ -87,9 +91,12 @@ const foodRecipe = {
                         ingredients = coalesce($2, ingredients), 
                         video = coalesce($3, video), 
                         photo  = coalesce($4, photo),
-                        updated_at = $5
-                        WHERE id_recipes = $6`,
-                values: [data.title, data.ingredients, data.video, data.photo, updated_at, data.id],
+                        photo_pub_id = coalesce($5, photo_pub_id),
+                        photo_url = coalesce($6, photo_url),
+                        photo_secure_url = coalesce($7, photo_secure_url),
+                        updated_at = $8
+                        WHERE id_recipes = $9`,                
+                values: [data.title, data.ingredients, data.video, data.photo, data.photo_pub_id, data.photo_url, data.photo_secure_url, updated_at, data.id],
             }
             db.query(query , (err, result) => {
                     if (err) {
@@ -104,7 +111,7 @@ const foodRecipe = {
     delete: (id) => {
         return new Promise((resolve, reject) => {
             const query = {
-                text: `DELETE FROM recipes WHERE id = $1`,
+                text: `DELETE FROM recipes WHERE id_recipes = $1`,
                 values: [id],
             }
             db.query(query ,(err, result) => {

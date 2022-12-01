@@ -6,7 +6,7 @@ const userModel = {
   selectAll: () => {
     return new Promise((resolve, reject) => {
       const query = {
-        text: "SELECT * FROM users ORDER by id ASC",
+        text: "SELECT * FROM users ORDER by name ASC",
       };
 
       db.query(query, (err, res) => {
@@ -94,8 +94,11 @@ const userModel = {
                         email = coalesce($2, email), 
                         phone = coalesce($3, phone), 
                         photo = coalesce($4, photo), 
-                        updated_at = $5 
-                        where id_user = $6`,
+                        photo_pub_id = coalesce($5, photo_pub_id),
+                        photo_url = coalesce($6, photo_url),
+                        photo_secure_url = coalesce($7, photo_secure_url),
+                        updated_at = $8 
+                        where id_user = $9`,
         values: [name, email, phone, photo, updated_at, id],
       };
       db.query(query, (err, result) => {
