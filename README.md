@@ -58,6 +58,48 @@
   <summary>
     Login Page
   </summary>
-<img src="screenshot/Landing Page.jpeg" alt="Landing Page" />
+<img src="ss/login_page.png" alt="login Page" />
+</details>
+<details>
+  <summary>
+    Register Page
+  </summary>
+<img src="ss/register_page.png" alt="login Page" />
+</details>
+<details>
+  <summary>
+    Landing Page
+  </summary>
+<img src="ss/landing_page.png" alt="login Page" />
+</details>
+<details>
+  <summary>
+    Add recipe Page
+  </summary>
+<img src="ss/add recipe_page.png" alt="login Page" />
+</details>
+<details>
+  <summary>
+    Profile Page
+  </summary>
+<img src="ss/profile_page.png" alt="login Page" />
+</details>
+<details>
+  <summary>
+    My recipe Page
+  </summary>
+<img src="ss/my recipe_page.png" alt="login Page" />
+</details>
+<details>
+  <summary>
+    Detail recipe Page
+  </summary>
+<img src="ss/detail recipe_page.png" alt="login Page" />
+</details>
+<details>
+  <summary>
+    Update recipe Page
+  </summary>
+<img src="ss/update_page.png" alt="login Page" />
 </details>
 
