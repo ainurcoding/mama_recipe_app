@@ -48,3 +48,16 @@
 </ul>
 <hr/>
 
+### Installation Guide
+<p>Backend</p>
+<hr />
+<p>Frontend</p>
+
+### Screenshot Application
+<details>
+  <summary>
+    Login Page
+  </summary>
+<img src="screenshot/Landing Page.jpeg" alt="Landing Page" />
+</details>
+
