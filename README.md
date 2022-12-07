@@ -50,6 +50,14 @@
 
 ### Installation Guide
 <p>Backend</p>
+<ol type="1">
+  <li>Your first step is to add the .env settings contained in the backend folder, with the examples contained in the .env-example.</li>
+  <li>Continue with database creation.</li>
+  <li>You can first import the postman documentation contained in this repo and pay attention to the fields in each POST request.
+</li>
+  <li>To run the server that has been set, use the <b>npm run dev command</b>.</li>
+  <li>When there is a description of the Server running on Port (with the port you have specified), the API is ready to use.</li>
+</ol>
 <hr />
 <p>Frontend</p>
 
