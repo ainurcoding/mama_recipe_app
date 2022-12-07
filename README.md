@@ -67,6 +67,7 @@
   <li>To run the server that has been set, use the <b>npm run dev command</b>.</li>
   <li>If the website page has appeared, then the front end is ready to use.</li>
 </ol>
+<hr />
 
 ### Screenshot Application
 <details>
@@ -117,4 +118,24 @@
   </summary>
 <img src="ss/update_page.png" alt="login Page" />
 </details>
+<hr />
+
+### Demo Application
+<p>Visit this link for app demo <a href='https://mama-recipe-kappa.vercel.app/'>mama recipe</a></p>
+<hr />
+
+### For More Information
+<p>My Social media account:</p> <br />
+<div>
+<img height="25" width="25" src='https://camo.githubusercontent.com/c9dacf0f25a1489fdbc6c0d2b41cda58b77fa210a13a886d6f99e027adfbd358/68747470733a2f2f6564656e742e6769746875622e696f2f537570657254696e7949636f6e732f696d616765732f7376672f696e7374616772616d2e737667' alt='ig-icon'></img><span> : @ainurridwan_</span>
+</div>
+
+<div>
+<img height="25" width="25" src='https://camo.githubusercontent.com/4a3dd8d10a27c272fd04b2ce8ed1a130606f95ea6a76b5e19ce8b642faa18c27/68747470733a2f2f6564656e742e6769746875622e696f2f537570657254696e7949636f6e732f696d616765732f7376672f676d61696c2e737667' alt='gmail-icon'></img><span> : ainurridwank2@gmail.com</span>
+</div>
+
+<div>
+:copyright: Ainur Ridwan, 2022
+</div>
+
 
