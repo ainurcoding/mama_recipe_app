@@ -1,6 +1,6 @@
 
 # mama_recipe_app
-<div align="center"><img src="logo_mama_recipe.png"/></div>
+<div align="center"><img src="logo_mama_recipe.png" height="150" width="150"/></div>
 
 <hr/>
 
