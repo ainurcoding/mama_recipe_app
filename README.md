@@ -91,37 +91,31 @@
   <summary>
     Landing Page
   </summary>
-<img src="ss/landing_page.png" alt="login Page" />
+<img src="https://github.com/ainurcoding/mama_recipe_app/blob/master/ss/Landing%20page.jpeg" alt="login Page" />
 </details>
 <details>
   <summary>
     Add recipe Page
   </summary>
-<img src="ss/add recipe_page.png" alt="login Page" />
+<img src="https://github.com/ainurcoding/mama_recipe_app/blob/master/ss/add%20recipe%20page.jpeg" alt="login Page" />
 </details>
 <details>
   <summary>
     Profile Page
   </summary>
-<img src="ss/profile_page.png" alt="login Page" />
-</details>
-<details>
-  <summary>
-    My recipe Page
-  </summary>
-<img src="ss/my recipe_page.png" alt="login Page" />
+<img src="https://github.com/ainurcoding/mama_recipe_app/blob/master/ss/Profile%20user.jpeg" alt="login Page" />
 </details>
 <details>
   <summary>
     Detail recipe Page
   </summary>
-<img src="ss/detail recipe_page.png" alt="login Page" />
+<img src="https://github.com/ainurcoding/mama_recipe_app/blob/master/ss/detail%20recipe.jpeg" alt="login Page" />
 </details>
 <details>
   <summary>
     Update recipe Page
   </summary>
-<img src="ss/update_page.png" alt="login Page" />
+<img src="https://github.com/ainurcoding/mama_recipe_app/blob/master/ss/Update%20recipe%20page.jpeg" alt="login Page" />
 </details>
 <hr />
 
