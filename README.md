@@ -1,7 +1,12 @@
 
 # mama_recipe_app
 <div align="center"><img src="logo_mama_recipe.png" height="150" width="150"/></div>
+<hr />
 
+### Description
+
+<p>Mama Recipe is a web application that provides a variety of food recipes available on it. This website was built using technologies including PSQL as database management, Express JS as a library from JS nodes for Backend management. React JS as a library from the JS node for Frontend management, and also the JS node as the main language of this application. In the image below is a display of the login page, landing page, recipe detail page, and profile page.
+</p>
 <hr/>
 
 ## General Information
@@ -121,6 +126,7 @@
 <hr />
 
 ### Demo Application
+<p><a href='https://github.com/ainurcoding/mama_recipe_app/tree/master/backend'>Visit backend repository</a></p>
 <p>Visit this link for app demo <a href='https://mama-recipe-kappa.vercel.app/'>mama recipe</a></p>
 <hr />
 
