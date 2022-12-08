@@ -7,12 +7,12 @@
 ## General Information
 ### Build with
 <ul>
-  <li>HTML 5</li>
-  <li>CSS</li>
-  <li>JavaScript</li>
-  <li>NodeJS</li>
-  <li>ReactJS (frontend library)</li>
-  <li>ExpressJS (backend library)</li>
+  <li><a href='https://html5.org/'>HTML 5</a></li>
+  <li><a href='https://www.w3.org/Style/CSS/Overview.en.html'>CSS</a></li>
+  <li><a href='https://www.javascript.com/'>JavaScript</a></li>
+  <li><a href='https://nodejs.org/en/'>NodeJS</a></li>
+  <li><a href='https://reactjs.org/'>React JS (for frontend)</a></li>
+  <li><a href='https://expressjs.com/'>Express JS (for backend)</a></li>
 </ul>
 
 ### Structure Folder 
