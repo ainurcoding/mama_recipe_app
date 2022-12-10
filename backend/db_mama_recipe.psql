@@ -1,0 +1,182 @@
+--
+-- PostgreSQL database dump
+--
+
+-- Dumped from database version 15.1
+-- Dumped by pg_dump version 15.1
+
+SET statement_timeout = 0;
+SET lock_timeout = 0;
+SET idle_in_transaction_session_timeout = 0;
+SET client_encoding = 'UTF8';
+SET standard_conforming_strings = on;
+SELECT pg_catalog.set_config('search_path', '', false);
+SET check_function_bodies = false;
+SET xmloption = content;
+SET client_min_messages = warning;
+SET row_security = off;
+
+SET default_tablespace = '';
+
+SET default_table_access_method = heap;
+
+--
+-- Name: recipes; Type: TABLE; Schema: public; Owner: postgres
+--
+
+CREATE TABLE public.recipes (
+    id_recipes integer NOT NULL,
+    title character varying(50),
+    ingredients text,
+    video text,
+    photo text,
+    user_id integer,
+    created_at timestamp with time zone DEFAULT now() NOT NULL,
+    updated_at timestamp with time zone,
+    photo_pub_id character varying,
+    photo_url character varying,
+    photo_secure_url character varying
+);
+
+
+ALTER TABLE public.recipes OWNER TO postgres;
+
+--
+-- Name: recipes_id_recipes_seq; Type: SEQUENCE; Schema: public; Owner: postgres
+--
+
+CREATE SEQUENCE public.recipes_id_recipes_seq
+    AS integer
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER TABLE public.recipes_id_recipes_seq OWNER TO postgres;
+
+--
+-- Name: recipes_id_recipes_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
+--
+
+ALTER SEQUENCE public.recipes_id_recipes_seq OWNED BY public.recipes.id_recipes;
+
+
+--
+-- Name: users; Type: TABLE; Schema: public; Owner: postgres
+--
+
+CREATE TABLE public.users (
+    id_user integer NOT NULL,
+    name character varying(50),
+    email character varying(50),
+    password character varying,
+    phone character varying(20),
+    created_at timestamp with time zone DEFAULT now() NOT NULL,
+    recipes_id integer,
+    photo text,
+    updated_at timestamp with time zone,
+    photo_pub_id character varying,
+    photo_url character varying,
+    photo_secure_url character varying
+);
+
+
+ALTER TABLE public.users OWNER TO postgres;
+
+--
+-- Name: users_id_user_seq; Type: SEQUENCE; Schema: public; Owner: postgres
+--
+
+CREATE SEQUENCE public.users_id_user_seq
+    AS integer
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER TABLE public.users_id_user_seq OWNER TO postgres;
+
+--
+-- Name: users_id_user_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
+--
+
+ALTER SEQUENCE public.users_id_user_seq OWNED BY public.users.id_user;
+
+
+--
+-- Name: recipes id_recipes; Type: DEFAULT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.recipes ALTER COLUMN id_recipes SET DEFAULT nextval('public.recipes_id_recipes_seq'::regclass);
+
+
+--
+-- Name: users id_user; Type: DEFAULT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.users ALTER COLUMN id_user SET DEFAULT nextval('public.users_id_user_seq'::regclass);
+
+
+--
+-- Data for Name: recipes; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+COPY public.recipes (id_recipes, title, ingredients, video, photo, user_id, created_at, updated_at, photo_pub_id, photo_url, photo_secure_url) FROM stdin;
+7	sate ayam	tusukan sate, ayam dada, kecap, kacang tanah	\N	{"asset_id":"b4e4b92122ca860196ef908383fcdd2b","public_id":"l1ugknfw2ubgyiziue9z","version":1669868081,"version_id":"f0af19b78c4f5bc5d2f90c95b6962e8f","signature":"a343ba7244477e80ed6e9053935c8338ce4a40c8","width":800,"height":507,"format":"jpg","resource_type":"image","created_at":"2022-12-01T04:14:41Z","tags":[],"bytes":123431,"type":"upload","etag":"f9f986b70af6da28ad2506d9c5d0386e","placeholder":false,"url":"http://res.cloudinary.com/dikvkoyod/image/upload/v1669868081/l1ugknfw2ubgyiziue9z.jpg","secure_url":"https://res.cloudinary.com/dikvkoyod/image/upload/v1669868081/l1ugknfw2ubgyiziue9z.jpg","folder":"","original_filename":"sate ayam-e8ea0a92ac591ca6e26e","api_key":"755644783155754"}	1	2022-12-01 11:14:34.237747+07	\N	l1ugknfw2ubgyiziue9z	http://res.cloudinary.com/dikvkoyod/image/upload/v1669868081/l1ugknfw2ubgyiziue9z.jpg	https://res.cloudinary.com/dikvkoyod/image/upload/v1669868081/l1ugknfw2ubgyiziue9z.jpg
+8	sate kambing	daging kambing, minyak goreng, kecap manis, garam, bawang	\N	{"asset_id":"6c7ea5e88493e9c3641bd87795615bbf","public_id":"poahijrto0wv5cnwebd4","version":1669881327,"version_id":"6bc1ee1133b2d4eb31bb6706b402025a","signature":"6670eab2549f8b40b5875fa82ff0cfa6634e576f","width":275,"height":183,"format":"jpg","resource_type":"image","created_at":"2022-12-01T07:55:27Z","tags":[],"bytes":12993,"type":"upload","etag":"e3526bd7569ea4998830c239dbc29ed2","placeholder":false,"url":"http://res.cloudinary.com/dikvkoyod/image/upload/v1669881327/poahijrto0wv5cnwebd4.jpg","secure_url":"https://res.cloudinary.com/dikvkoyod/image/upload/v1669881327/poahijrto0wv5cnwebd4.jpg","folder":"","original_filename":"sate kambing-dc16537f59bcf0e78c8b","api_key":"755644783155754"}	1	2022-12-01 14:55:26.796221+07	\N	poahijrto0wv5cnwebd4	http://res.cloudinary.com/dikvkoyod/image/upload/v1669881327/poahijrto0wv5cnwebd4.jpg	https://res.cloudinary.com/dikvkoyod/image/upload/v1669881327/poahijrto0wv5cnwebd4.jpg
+5	Bubur Ayam	beras, air, garam, merica, ayam	bubur_ayam.mp4	{"asset_id":"5135b15a68e5612cce69734d1598966d","public_id":"dn2uhblmd8xagfgtkgga","version":1669863008,"version_id":"762edcfdacd5ca94ebabd35ad9bdb025","signature":"4e5e47f4aeca92f86aa59d75fbcabb1030bbfd94","width":275,"height":183,"format":"jpg","resource_type":"image","created_at":"2022-12-01T02:50:08Z","tags":[],"bytes":11062,"type":"upload","etag":"ff972af1f6728a3f5aceff45fcfde586","placeholder":false,"url":"http://res.cloudinary.com/dikvkoyod/image/upload/v1669863008/dn2uhblmd8xagfgtkgga.jpg","secure_url":"https://res.cloudinary.com/dikvkoyod/image/upload/v1669863008/dn2uhblmd8xagfgtkgga.jpg","folder":"","original_filename":"bubur_ayam-3799499720497dcfab7e","api_key":"755644783155754"}	1	2022-12-01 09:50:01.480176+07	\N	dn2uhblmd8xagfgtkgga	http://res.cloudinary.com/dikvkoyod/image/upload/v1669863008/dn2uhblmd8xagfgtkgga.jpg	https://res.cloudinary.com/dikvkoyod/image/upload/v1669863008/dn2uhblmd8xagfgtkgga.jpg
+2	ayam goreng v2 matap	ayam bagian mana saja, merica, bawang merah, bawang putih, garam, royko, masako, ajinomoto	bubur_ayam.mp4	{"asset_id":"ddfb79ec669d483df416b891abcaa3c2","public_id":"loxhhgc2gosqnpu6kxnx","version":1669864527,"version_id":"889e7da9efece5528bd316e7e1a8f0b3","signature":"4b21285d4bd2030ddd0efd43357234789721cc89","width":375,"height":240,"format":"jpg","resource_type":"image","created_at":"2022-12-01T03:15:27Z","tags":[],"bytes":18705,"type":"upload","etag":"fdea16014647655bdb53d26b7ab1781b","placeholder":false,"url":"http://res.cloudinary.com/dikvkoyod/image/upload/v1669864527/loxhhgc2gosqnpu6kxnx.jpg","secure_url":"https://res.cloudinary.com/dikvkoyod/image/upload/v1669864527/loxhhgc2gosqnpu6kxnx.jpg","folder":"","original_filename":"ayam_goreng_v2-e41acfa6e99b2a6f040e","api_key":"755644783155754"}	1	2022-11-29 08:13:38.642911+07	2022-12-01 10:15:22.01329+07	loxhhgc2gosqnpu6kxnx	http://res.cloudinary.com/dikvkoyod/image/upload/v1669864527/loxhhgc2gosqnpu6kxnx.jpg	https://res.cloudinary.com/dikvkoyod/image/upload/v1669864527/loxhhgc2gosqnpu6kxnx.jpg
+9	Sate sapi	daging sapi pilihan, bawang merah, bawang putih, penyedap rasa, kecap manis, mentega, irisan jeruk lemon, cabai keriting	\N	{"asset_id":"1a96388d8a56175d4945ea2e165b0be8","public_id":"xa8sqsjihu3pqwxb4gwk","version":1669884246,"version_id":"7c11a3a68008089e494389a321195c96","signature":"25b33a04631238127a4bb759af2927d5d9b744ff","width":940,"height":569,"format":"jpg","resource_type":"image","created_at":"2022-12-01T08:44:06Z","tags":[],"bytes":132381,"type":"upload","etag":"4a3a0ec5207a66c85cdebcb3e3b0a06a","placeholder":false,"url":"http://res.cloudinary.com/dikvkoyod/image/upload/v1669884246/xa8sqsjihu3pqwxb4gwk.jpg","secure_url":"https://res.cloudinary.com/dikvkoyod/image/upload/v1669884246/xa8sqsjihu3pqwxb4gwk.jpg","folder":"","original_filename":"sate sapi-0f9e1f451c7595ca5034","api_key":"755644783155754"}	3	2022-12-01 15:44:05.545789+07	\N	xa8sqsjihu3pqwxb4gwk	http://res.cloudinary.com/dikvkoyod/image/upload/v1669884246/xa8sqsjihu3pqwxb4gwk.jpg	https://res.cloudinary.com/dikvkoyod/image/upload/v1669884246/xa8sqsjihu3pqwxb4gwk.jpg
+6	rendang cinta	full kasih sayang	\N	{"asset_id":"de8c30f4f498a65c1dbe62aef07bcc78","public_id":"twf5tyz2iza4u6inpjtm","version":1669867848,"version_id":"aa4f34d393f08c73f938a485a2101e38","signature":"afd80f8c31911262e152811d79209e48aa45793a","width":800,"height":449,"format":"jpg","resource_type":"image","created_at":"2022-12-01T04:10:48Z","tags":[],"bytes":73260,"type":"upload","etag":"8d8821b1a1dea8cb971f2b1b12c14628","placeholder":false,"url":"http://res.cloudinary.com/dikvkoyod/image/upload/v1669867848/twf5tyz2iza4u6inpjtm.jpg","secure_url":"https://res.cloudinary.com/dikvkoyod/image/upload/v1669867848/twf5tyz2iza4u6inpjtm.jpg","folder":"","original_filename":"rendang-420898a7867fcb4fa4af","api_key":"755644783155754"}	1	2022-12-01 10:30:29.901818+07	2022-12-01 11:13:31.20988+07	twf5tyz2iza4u6inpjtm	http://res.cloudinary.com/dikvkoyod/image/upload/v1669867848/twf5tyz2iza4u6inpjtm.jpg	https://res.cloudinary.com/dikvkoyod/image/upload/v1669867848/twf5tyz2iza4u6inpjtm.jpg
+\.
+
+
+--
+-- Data for Name: users; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+COPY public.users (id_user, name, email, password, phone, created_at, recipes_id, photo, updated_at, photo_pub_id, photo_url, photo_secure_url) FROM stdin;
+2	Yayan 	yayan@mail.com	$2b$10$Wzimm5i4PBHn10KAJ0rcMeA3IjSRcwR7en6ot8H58Nu2fnnBcyr6.	021455432156	2022-11-29 21:30:28.165427+07	\N	\N	\N	\N	\N	\N
+1	bambang pamungkas	bambang@mail.com	$2b$10$w.OK.EIisfl1a13n3Goab.P90mP.QhCi9eN/0Fcs4DaLAtPX2DMdy	0214545	2022-11-29 05:35:19.387685+07	\N	pexels-quang-anh-ha-nguyen-902030-296e9495f2f5a40d7f45.jpg	2022-11-30 22:27:38.270715+07	\N	\N	\N
+3	dudung koswara	dudung@mail.com	$2b$10$EmWo49kGZBFFCHeoiHzEk.KG4UTPKvKCfRa21ZSTMHDz5pxex5pvO	081354896654	2022-12-01 15:42:28.667539+07	\N	\N	\N	\N	\N	\N
+\.
+
+
+--
+-- Name: recipes_id_recipes_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('public.recipes_id_recipes_seq', 9, true);
+
+
+--
+-- Name: users_id_user_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('public.users_id_user_seq', 3, true);
+
+
+--
+-- Name: recipes recipes_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.recipes
+    ADD CONSTRAINT recipes_pkey PRIMARY KEY (id_recipes);
+
+
+--
+-- Name: users users_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.users
+    ADD CONSTRAINT users_pkey PRIMARY KEY (id_user);
+
+
+--
+-- PostgreSQL database dump complete
+--
+
