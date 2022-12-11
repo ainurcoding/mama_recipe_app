@@ -18,9 +18,12 @@
   <li><a href='#build-with'>Build With</a></li>
   <li><a href='#structure-folder'>Structure Folder</a></li>
   <li><a href='#installation-guide'>Installation Guide</a></li>
+  <li><a href='#commands'>Commands</a></li>
+  <li><a href='#env-variables'>Environtment Variables</a></li>
+  <li><a href='#api-documentation'>API Documentation</a></li> 
+  <li><a href='#packages-included'>Packages Included</a></li>
   <li><a href='#demo-application'>Demo Application</a></li>
   <li><a href='#for-more-information'>For More Information </a></li>
-  <li><a href='#commands'>Commands</a></li>
 </ul>
 
 <hr />
@@ -126,7 +129,7 @@ Linting:
 
 ### Environment Variables
 
-<p>The environment variables can be found and modified in the `.env` file. They come with these default values:</p>
+<p id='env-variables'>The environment variables can be found and modified in the `.env` file. They come with these default values:</p>
 
 ```
 PORT=your backend port
@@ -152,7 +155,7 @@ API_SECRET=your cloudinary API secret
 
 ### API Documentation
 
-List of available routes:
+<p id='api-documentation'>List of available routes:</p>
 
 **Auth Route**\
 `POST /register` - register\
@@ -175,7 +178,10 @@ List of available routes:
 
 ### Packages Included
 
-- NPM dependencies
+<ul id='packages-included'>
+  <li><p>NPM dependencies</p></li>
+</ul>
+
 
   ![](https://img.shields.io/badge/bcrypt-v5.0.1-blue)
   ![](https://img.shields.io/badge/body--parser-v1.19.2-blue)
