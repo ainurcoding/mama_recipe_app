@@ -12,7 +12,7 @@
 ## General Information
 
 ### Table of contents
-commands, endpoint, ss-app, packages-included, demo-application, for-more-information
+
 <div id='table-of-content'>List</div>
 
 - <a href='#build-with'>Build With</a>
