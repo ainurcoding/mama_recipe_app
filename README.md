@@ -66,7 +66,7 @@ commands, endpoint, ss-app, packages-included, demo-application, for-more-inform
   <li>Make sure your backend is ready to use, and the backend server is running.</li>
   <li>Set .env in the frontend folder to be your backend URL for example, your backend server is: <b>'localhost:5000'</b>.</li>
   <li>Run the front-end server with the command npm run start on Shell / Git Bash.</li>
-  <li>To run the server that has been set, use the <b>npm run dev command</b>.</li>
+  <li>To run the server that has been set, use the <b>npm run start command</b>.</li>
   <li>If the website page has appeared, then the front end is ready to use.</li>
 </ol>
 
