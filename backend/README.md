@@ -1,7 +1,7 @@
 
 # mama_recipe_app
 <div align="center"><img src="https://github.com/ainurcoding/mama_recipe_app/blob/master/logo_mama_recipe.png" height="50" width="50"/></div>
-<div align='center'><a href=''> >> Visit Frontend Repository << </a></div>
+<div align='center'><a href='https://github.com/ainurcoding/mama_recipe_app/tree/master/frontend'> >> Visit Frontend Repository << </a></div>
 
 <hr />
 
